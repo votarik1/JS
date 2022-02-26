@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  console.log(mathOperation(5, 3, "+"));
+  console.log(mathOperation(5, 3, ":)"));
+
+  /**
+ * Возвращает результат математической операции
+ * @param {number} firstNumber - Первое число
+ * @param {number} secondNumber - Второе число
+ * @param {string} operation - Знак операции
+ * @returns {number} - Сумма чисел
+ */
+  function mathOperation(firstNumber , secondNumber, operation) {
+    switch (operation) {
+      case "+":
+        return summ(firstNumber, secondNumber);
+      case "-":
+        return subtraction(firstNumber, secondNumber);
+      case "*":
+        return product(firstNumber, secondNumber);
+      case "/":
+        return divide(firstNumber, secondNumber);
+      default:
+        return NaN;
+    }
+  }
+
+  /**
+ * Возвращает сумму
+ * @param {number} firstNumber - Первое число
+ * @param {number} secondNumber - Второе число
+ * @returns {number} - Сумма чисел
+ */
+ function summ(firstNumber , secondNumber) {
+    return firstNumber + secondNumber;
+  }
+
+/**
+ * Возвращает разность
+ * @param {number} firstNumber - Первое число
+ * @param {number} secondNumber - Второе число
+ * @returns {number} - Разность чисел
+ */
+  function subtraction(firstNumber , secondNumber) {
+    if (firstNumber > secondNumber) {
+      return firstNumber - secondNumber;
+    }
+    return secondNumber - firstNumber;
+  }
+
+/**
+ * Возвращает произведение
+ * @param {number} firstNumber - Первое число
+ * @param {number} secondNumber - Второе число
+ * @returns {number} - Произведение чисел
+ */
+  function product(firstNumber , secondNumber) {
+    return firstNumber * secondNumber;
+  }
+
+/**
+ * Возвращает результат деления
+ * @param {number} firstNumber - Первое число
+ * @param {number} secondNumber - Второе число
+ * @returns {number} - Результат деления двух чисел
+ */
+  function divide(firstNumber , secondNumber) {
+    return firstNumber / secondNumber;
+  }
+</script>
+</body>
+</html>
